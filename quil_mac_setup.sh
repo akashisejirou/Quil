@@ -4,7 +4,7 @@ GO_VERSION=1.23.2
 
 echo "===========================================================================" 
 echo " ✨ QNODE MACOS SETUP ✨" 
-echo "==========================================================================="
+echo "===========================================================================" 
 echo "" 
 echo "⏳ Processing... " 
 sleep 3
@@ -31,6 +31,14 @@ fi
 # Install required packages
 echo "Installing required packages..."
 brew install git wget curl jq tmux
+
+# Check Git installation
+if command -v git &> /dev/null; then
+    echo "Git is already installed."
+else
+    echo "Installing Git..."
+    brew install git
+fi
 
 # Install Go
 echo "Installing Go $GO_VERSION..."
